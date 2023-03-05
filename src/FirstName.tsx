@@ -1,12 +1,15 @@
-import React from "react";
+import React from 'react';
 
 type FirstNameProps = {
   firstName: string;
   onFirstNameChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const FirstName = ({ firstName, onFirstNameChange }: FirstNameProps) => {
-  console.log("FirstName re-rendered");
+export const FirstName = ({
+  firstName,
+  onFirstNameChange,
+}: FirstNameProps): JSX.Element => {
+  console.log('FirstName re-rendered');
 
   return (
     <div>

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-export const Age = () => {
+export const Age = (): JSX.Element => {
   const [age, setAge] = useState<number>(18);
 
-  console.log("Age re-rendered");
+  console.log('Age re-rendered');
 
-  const handleAgeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAgeChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
     setAge(parseInt(event.target.value));
   };
 

@@ -1,11 +1,10 @@
-import React from "react";
-
+import React from 'react';
 type LastNameProps = {
   lastName: string;
 };
 
-export const LastName = ({ lastName }: LastNameProps) => {
-  console.log("LastName re-rendered");
+export const LastName = ({ lastName }: LastNameProps): JSX.Element => {
+  console.log('LastName re-rendered');
 
   return (
     <div>

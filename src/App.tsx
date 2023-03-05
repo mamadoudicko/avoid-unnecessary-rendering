@@ -1,9 +1,10 @@
-import { User } from "./types";
-import { UserProfile } from "./UserProfile";
+import React from 'react';
+import { type User } from './types';
+import { UserProfile } from './UserProfile';
 
-const USER: User = { firstName: "Mamadou", lastName: "DICKO", age: 15 };
+const USER: User = { firstName: 'Mamadou', lastName: 'DICKO', age: 15 };
 
-function App() {
+function App(): JSX.Element {
   return <UserProfile user={USER} />;
 }
 
