@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 export const Age = (): JSX.Element => {
   const [age, setAge] = useState<number>(18);
 
-  console.log('Age re-rendered');
-
   const handleAgeChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
@@ -12,10 +10,10 @@ export const Age = (): JSX.Element => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: '#FF000040', padding: 10 }}>
       <p>Age: {age}</p>
-      <input type="number" value={age} onChange={handleAgeChange} />
-      <p>{new Date().toLocaleTimeString()}</p>
+      <input type="number" defaultValue={age} onChange={handleAgeChange} />
+      <p>Rendered at: {new Date().toLocaleTimeString()}</p>
     </div>
   );
 };

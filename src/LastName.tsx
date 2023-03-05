@@ -4,12 +4,10 @@ type LastNameProps = {
 };
 
 export const LastName = ({ lastName }: LastNameProps): JSX.Element => {
-  console.log('LastName re-rendered');
-
   return (
-    <div>
+    <div style={{ backgroundColor: '#FFB30040', padding: 10 }}>
       <p>Last Name: {lastName}</p>
-      <p>{new Date().toLocaleTimeString()}</p>
+      <p>Rendered at: {new Date().toLocaleTimeString()}</p>
     </div>
   );
 };
