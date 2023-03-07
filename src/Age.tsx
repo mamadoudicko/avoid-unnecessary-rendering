@@ -18,5 +18,5 @@ const Age = ({ value }: { value: number }): JSX.Element => {
     </div>
   );
 };
-
+// by memoizing this component, re-render should happen only when props change or state (or context)
 export const MemoizedAge = memo(Age);

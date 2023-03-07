@@ -9,7 +9,12 @@ export type User = {
   age: number;
 };
 
+// move to feat/memoization-example branch for memoized version
+// move to main branch for useState version
 export const UserProfile = (): JSX.Element => {
+  // using useState will cause components re-render even if their props doesn't change
+  // you can use memoization to prevent re-rendering when props doesn't change
+  // CAUTION: memoization should be used for optimization purpose, not to only prevent re-rendering
   const [user, setUser] = useState<User>({
     firstName: 'Mamadou',
     lastName: 'DICKO',
