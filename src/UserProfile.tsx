@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { FirstName } from './FirstName';
 import { LastName } from './LastName';
 import { Age } from './Age';
@@ -10,26 +10,33 @@ export type User = {
 };
 
 export const UserProfile = (): JSX.Element => {
-  const [user, setUser] = useState<User>({
+  const user = useRef<User>({
     firstName: 'Mamadou',
     lastName: 'DICKO',
     age: 15,
   });
 
+  const getUser = (): User => user.current;
+
+  const setUser = (userNewValues: User): void => {
+    user.current = userNewValues;
+  };
+
   const handleValueChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    setUser(userData => ({
-      ...userData,
+    setUser({
+      ...getUser(),
       [event.target.name]: event.target.value,
-    }));
-  };
-  const addUser = (event: React.SyntheticEvent): void => {
-    event.preventDefault();
-    console.log({ user });
+    });
   };
 
-  const { firstName, lastName, age } = user;
+  const addUser = (event: React.SyntheticEvent): void => {
+    event.preventDefault();
+    console.log({ user: getUser() });
+  };
+
+  const { firstName, lastName, age } = getUser();
 
   return (
     <div style={{ backgroundColor: '#00000040', padding: 10 }}>
