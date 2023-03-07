@@ -29,7 +29,7 @@ export const UserProfile = (): JSX.Element => {
     console.log({ user });
   };
 
-  const { firstName, lastName } = user;
+  const { firstName, lastName, age } = user;
 
   return (
     <div style={{ backgroundColor: '#00000040', padding: 10 }}>
@@ -56,9 +56,9 @@ export const UserProfile = (): JSX.Element => {
           />
         </div>
 
-        <FirstName firstName={firstName} />
-        <LastName lastName={lastName} />
-        <Age />
+        <FirstName value={firstName} />
+        <LastName value={lastName} />
+        <Age value={age} />
 
         <button type="submit">validate</button>
       </form>
