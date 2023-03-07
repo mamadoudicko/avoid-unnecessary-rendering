@@ -9,7 +9,11 @@ export type User = {
   age: number;
 };
 
+// move to feat/memoization-example branch for memoized version
+// move to main branch for useState version
 export const UserProfile = (): JSX.Element => {
+  // using useRef won't cause component re-render even if values changes
+  // you can use addUser version below to see that values are updated
   const user = useRef<User>({
     firstName: 'Mamadou',
     lastName: 'DICKO',
