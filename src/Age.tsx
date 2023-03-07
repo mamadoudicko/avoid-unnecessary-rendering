@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-export const Age = (): JSX.Element => {
-  const [age, setAge] = useState<number>(18);
+export const Age = ({ value }: { value: number }): JSX.Element => {
+  // using local state for explications purposes
+  const [age, setAge] = useState<number>(value);
 
   const handleAgeChange = (
     event: React.ChangeEvent<HTMLInputElement>
