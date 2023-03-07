@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 type FirstNameProps = {
   value: string;
 };
 
-export const FirstName = ({ value }: FirstNameProps): JSX.Element => {
+const FirstName = ({ value }: FirstNameProps): JSX.Element => {
   return (
     <div style={{ backgroundColor: '#00FF0040', padding: 10 }}>
       <p>First Name: {value}</p>
@@ -12,3 +12,5 @@ export const FirstName = ({ value }: FirstNameProps): JSX.Element => {
     </div>
   );
 };
+
+export const MemoizedFirstName = memo(FirstName);

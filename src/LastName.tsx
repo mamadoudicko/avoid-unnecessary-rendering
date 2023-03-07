@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 type LastNameProps = {
   value: string;
 };
 
-export const LastName = ({ value }: LastNameProps): JSX.Element => {
+const LastName = ({ value }: LastNameProps): JSX.Element => {
   return (
     <div style={{ backgroundColor: '#FFB30040', padding: 10 }}>
       <p>Last Name: {value}</p>
@@ -11,3 +11,5 @@ export const LastName = ({ value }: LastNameProps): JSX.Element => {
     </div>
   );
 };
+
+export const MemoizedLastName = memo(LastName);

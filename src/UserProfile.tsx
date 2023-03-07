@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FirstName } from './FirstName';
-import { LastName } from './LastName';
-import { Age } from './Age';
+import { MemoizedAge } from './Age';
+import { MemoizedFirstName } from './FirstName';
+import { MemoizedLastName } from './LastName';
 
 export type User = {
   firstName: string;
@@ -55,10 +55,12 @@ export const UserProfile = (): JSX.Element => {
             id="lastName"
           />
         </div>
-
-        <FirstName value={firstName} />
-        <LastName value={lastName} />
-        <Age value={age} />
+        {
+          // by using memoized version, component won't re-render when their props doesn't change (or state)
+        }
+        <MemoizedFirstName value={firstName} />
+        <MemoizedLastName value={lastName} />
+        <MemoizedAge value={age} />
 
         <button type="submit">validate</button>
       </form>

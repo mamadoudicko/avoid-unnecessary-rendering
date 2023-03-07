@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 
-export const Age = ({ value }: { value: number }): JSX.Element => {
+const Age = ({ value }: { value: number }): JSX.Element => {
   // using local state for explications purposes
   const [age, setAge] = useState<number>(value);
 
@@ -18,3 +18,5 @@ export const Age = ({ value }: { value: number }): JSX.Element => {
     </div>
   );
 };
+
+export const MemoizedAge = memo(Age);
