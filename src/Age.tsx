@@ -19,4 +19,9 @@ const Age = ({ value }: { value: number }): JSX.Element => {
   );
 };
 // by memoizing this component, re-render should happen only when props change or state (or context)
+
+/**
+ * 💡 Use memoization thoughtfully: it improves performance by caching results, but comes at a cost of 💾 memory and ⏱️ computation time (and can actually lead to performance issues 🤯).
+ * Evaluate its benefits and drawbacks based on function complexity and frequency. ⚖️
+ * */
 export const MemoizedAge = memo(Age);
